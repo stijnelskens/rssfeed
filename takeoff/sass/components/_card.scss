@@ -1,0 +1,100 @@
+.card {
+  @include cf;
+  position: relative;
+  display: block;
+  color: inherit;
+
+  &__block {
+    padding: $rh-sml;
+    & + & {
+      padding-top: 0;
+    }
+  }
+
+  &__img {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    overflow: hidden;
+    margin-bottom: $rh-xsm;
+
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  &__title {
+    margin-left: $rh-xxs;
+
+    a {
+      @include link-variant($color-secondary, $color-tertiary, $color-link-visited);
+
+      &:hover,
+      &:focus {
+        color: $color-tertiary !important;
+      }
+
+      &:visited {
+        color: $color-link-visited;
+      }
+    }
+
+    &:before {
+      @include absolute-fill;
+    }
+  }
+
+  &__link {
+    @include transitions(color);
+    display: inline-block;
+    color: $color-link;
+    text-decoration: underline;
+  }
+
+  &__aside {
+
+    @include breakpoint(sml) {
+      float: left;
+      margin-right: $grid-gutter-width;
+      max-width: 200px;
+      + .card__main {
+        overflow-x: hidden;
+      }
+    }
+  }
+
+  &--clickable {
+
+    .card__title {
+
+      a {
+
+        &:before {
+          @include absolute-fill;
+          display: block;
+          content: '';
+          z-index: 10;
+        }
+      }
+    }
+  }
+}
+
+
+a.card,
+.card--link {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+
+    .card__title {
+      color: $color-primary;
+    }
+
+    .card__link {
+      color: $color-link;
+      text-decoration: none;
+    }
+  }
+}

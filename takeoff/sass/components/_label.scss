@@ -1,0 +1,18 @@
+.label {
+
+  @include fsRem($font-size-xsm);
+  display: inline-block;
+  padding: $rh-xxs $rh-xsm;
+  background: darken($gray-0, 8%);
+  color: darken($gray-25, 5%);
+  border-radius: $border-radius-med;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-top: $rh-xxs;
+  margin-left: $rh-xxs;
+
+  &--primary {
+    background: $color-primary;
+    color: $white;
+  }
+}

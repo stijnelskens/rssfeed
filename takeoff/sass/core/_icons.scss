@@ -1,0 +1,151 @@
+//  Generated from icons/template.hbs
+
+%ext-icon {
+  display: inline-block;
+  border: none;
+  font-family: 'icons';
+  font-weight: $font-weight-regular;
+  font-style: normal;
+  font-size: inherit;
+  line-height: inherit;
+  text-indent: 0;
+  text-transform: none;
+  vertical-align: middle;
+  text-rendering: auto;
+  transform: translate(0, 0);
+  text-decoration: underline; // IE fix
+}
+
+// IE fix
+%ext-icon {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'icons';
+  src:  url("../fonts/icons.eot");
+  src:  url("../fonts/icons.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/icons.woff") format("woff"),
+        url("../fonts/icons.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  &:before {
+    @extend %ext-icon;
+  }
+}
+
+
+%ext-icon-external-link {
+  content: '\f101';
+}
+
+.icon--external-link:before {
+  @extend %ext-icon-external-link;
+}
+
+%ext-icon-facebook {
+  content: '\f102';
+}
+
+.icon--facebook:before {
+  @extend %ext-icon-facebook;
+}
+
+%ext-icon-instagram {
+  content: '\f103';
+}
+
+.icon--instagram:before {
+  @extend %ext-icon-instagram;
+}
+
+%ext-icon-moon {
+  content: '\f104';
+}
+
+.icon--moon:before {
+  @extend %ext-icon-moon;
+}
+
+%ext-icon-twitter {
+  content: '\f105';
+}
+
+.icon--twitter:before {
+  @extend %ext-icon-twitter;
+}
+
+%ext-icon-account-circle {
+  content: '\f106';
+}
+
+.icon--account-circle:before {
+  @extend %ext-icon-account-circle;
+}
+
+%ext-icon-arrow-down {
+  content: '\f107';
+}
+
+.icon--arrow-down:before {
+  @extend %ext-icon-arrow-down;
+}
+
+%ext-icon-arrow-left {
+  content: '\f108';
+}
+
+.icon--arrow-left:before {
+  @extend %ext-icon-arrow-left;
+}
+
+%ext-icon-arrow-right {
+  content: '\f109';
+}
+
+.icon--arrow-right:before {
+  @extend %ext-icon-arrow-right;
+}
+
+%ext-icon-arrow-up {
+  content: '\f10a';
+}
+
+.icon--arrow-up:before {
+  @extend %ext-icon-arrow-up;
+}
+
+%ext-icon-clear {
+  content: '\f10b';
+}
+
+.icon--clear:before {
+  @extend %ext-icon-clear;
+}
+
+%ext-icon-heart {
+  content: '\f10c';
+}
+
+.icon--heart:before {
+  @extend %ext-icon-heart;
+}
+
+%ext-icon-menu {
+  content: '\f10d';
+}
+
+.icon--menu:before {
+  @extend %ext-icon-menu;
+}
+
+%ext-icon-play {
+  content: '\f10e';
+}
+
+.icon--play:before {
+  @extend %ext-icon-play;
+}

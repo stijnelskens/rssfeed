@@ -1,0 +1,33 @@
+.link {
+
+  &__icon {
+    margin-left: $rh-xxs;
+  }
+}
+
+.link--what {
+  @include fsRem(13px);
+  margin-top: -33px;
+  background: $color-primary;
+  padding: $rh-xsm $rh-sml;
+  color: $white !important;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+
+  }
+}
+
+.link--ext {
+
+  display: inline-block;
+
+  &:after {
+    @extend %ext-icon;
+    @extend %ext-icon-arrow-right;
+    vertical-align: bottom;
+  }
+}

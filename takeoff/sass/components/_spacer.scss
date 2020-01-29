@@ -1,0 +1,35 @@
+$spacer-breakpoints: ();
+$spacer-rhythm: (sml med);
+
+.spacer {
+  & + & {
+    margin-top: $rh-sml;
+  }
+
+  &--border {
+    + .spacer--border {
+      padding-top: $rh-med;
+      border-top: 1px solid lighten($gray-25, 15%);
+    }
+  }
+
+  // .spacer--sml
+  @each $rh in $spacer-rhythm {
+    &--#{$rh} {
+      [class*="spacer"] + & {
+        margin-top: map-get($rhythm, $rh);
+      }
+    }
+
+    // .spacer--sml@med
+    @each $bp in $spacer-breakpoints {
+      @include breakpoint($bp) {
+        &--#{$rh}\@#{$bp} {
+          [class*="spacer"] + & {
+            margin-top: map-get($rhythm, $rh) !important;
+          }
+        }
+      }
+    }
+  }
+}

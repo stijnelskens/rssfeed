@@ -1,0 +1,94 @@
+// Accessible skip to main content
+.skip-to-main {
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+  &:focus,
+  &:active {
+    color: $white;
+    background-color: $black;
+    left: auto;
+    top: auto;
+    width: 30%;
+    height: auto;
+    overflow: auto;
+    margin: 10px 35%;
+    padding: 5px;
+    border-radius: 15px;
+    border: 2px solid $color-primary;
+    text-align:center;
+    font-size: 1.2em;
+    z-index: 999;
+  }
+}
+
+.theme-dark {
+  background: $color-secondary;
+  color: $white;
+
+  .page-header {
+    border-color: lighten($color-secondary, 10%);
+    background: $color-secondary;
+
+    &__logo {
+      @include link-variant($white, $color-primary);
+    }
+  }
+
+  .meta {
+    color: lighten($color-secondary, 15%);
+  }
+
+  .label {
+    background: lighten($color-secondary, 8%);
+    color: $white;
+  }
+
+  .card__title {
+    a {
+      @include link-variant($white, $color-primary);
+
+      &:visited {
+        color: darken($color-secondary, 7%);
+      }
+    }
+  }
+
+  .spacer--border + .spacer--border {
+    border-color: lighten($color-secondary, 10%);
+  }
+
+  .switch-wrap {
+    background: lighten($color-secondary, 10%);
+  }
+  .switch {
+    &::after {
+      background: #ccc;
+    }
+  }
+
+  .section--border {
+    border-color: lighten($color-secondary, 10%);
+  }
+
+  .nav--categories {
+
+    .nav__link {
+      background: lighten($color-secondary,8%);
+
+      &.active {
+        background: $color-tertiary;
+      }
+    }
+  }
+
+  .nav--footer {
+    .nav__link {
+      @include link-variant($white);
+    }
+  }
+}

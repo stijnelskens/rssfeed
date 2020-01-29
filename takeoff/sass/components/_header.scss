@@ -1,0 +1,36 @@
+.page-header {
+  @include cf;
+  background: $white;
+  padding: ($rh-sml + 3) 0 $rh-sml 0;
+  border-bottom: 1px solid lighten($gray-25, 15%);
+  text-transform: uppercase;
+
+  &__logo {
+    @include link-variant($color-secondary, $color-primary);
+    @include fsRem(26px);
+    display: block;
+    width: 240px;
+    font-weight: 500;
+    text-decoration: none;
+
+    .dot {
+      color: $color-tertiary;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @include breakpoint(sml, max-width) {
+      clear: both;
+      margin: 0 auto;
+    }
+
+    @include breakpoint(sml) {
+      float: left;
+      margin-right: $rh-sml;
+    }
+  }
+}
