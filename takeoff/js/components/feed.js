@@ -2,7 +2,7 @@
 
 import * as moment from 'moment';
 
-const dataUrls = ['https://highsnobiety.com/rss', 'http://feeds.feedburner.com/hypebeast/feed', 'https://www.vice.com/en_uk/rss'];
+const dataUrls = ['https://highsnobiety.com/rss', 'http://feeds.feedburner.com/hypebeast/feed', 'https://www.nicekicks.com/feed'];
 
 $.each(dataUrls, function (i, u) {
 
@@ -15,7 +15,7 @@ $.each(dataUrls, function (i, u) {
             api_key: 'wc89wkhml8ovzhbeveogr6fqhbzl8vgwvbrvuxht', // Test API so no worries ;)
             order_by: 'pubDate',
             order_dir: 'desc',
-            count: 12
+            count: 20
         }
     }).done(function (response) {
 
@@ -54,8 +54,10 @@ $.each(dataUrls, function (i, u) {
                 const feedEntryLinkElement = document.createElement('a');
                 const feedEntryWebsite = document.createElement('span');
 
+                console.log(feedEntry.thumbnail);
+                
                 // Nasty to get just the url of the platform
-                const feedEntryWebsiteLink = feedEntry.guid.replace(/(^\w+:|^)\/\//, '').split('.com')[0];
+                const feedEntryWebsiteLink = feedEntry.guid.replace(/(^\w+:|^)\/\//, '').split('.com')[0];   
 
                 // Build up the links/titles/descriptions
                 feedContainer.setAttribute('class', 'spacer spacer--med spacer--border');
@@ -63,7 +65,11 @@ $.each(dataUrls, function (i, u) {
 
                 feedEntryAside.setAttribute('class', 'card__aside');
                 feedEntryImageContainer.setAttribute('class', 'card__img');
-                feedEntryImage.setAttribute('src', feedEntry.thumbnail);
+                if (feedEntry.thumbnail === '') {
+                    feedEntryImage.setAttribute('src', '/img/placeholderhype.png');
+                } else {
+                    feedEntryImage.setAttribute('src', feedEntry.thumbnail);
+                }
                 feedEntryImage.setAttribute('class', 'image--landscape-circle');
                 feedEntryImage.setAttribute('alt', feedEntry.title);
                 feedEntryMain.setAttribute('class', 'card__main');
@@ -80,6 +86,8 @@ $.each(dataUrls, function (i, u) {
                     feedEntryWebsite.innerText = 'Highsnobiety';
                 } else if (feedEntryWebsiteLink === 'hypebeast') {
                     feedEntryWebsite.innerText = 'Hypebeast';
+                } else if (feedEntryWebsiteLink === 'www.nicekicks') {
+                    feedEntryWebsite.innerText = 'Nice Kicks';
                 } else {
                     feedEntryWebsite.innerText = 'Vice';
                 }

@@ -53,7 +53,7 @@
       @include link-variant($white, $color-primary);
 
       &:visited {
-        color: darken($color-secondary, 7%);
+        color: lighten($color-secondary, 15%);
       }
     }
   }

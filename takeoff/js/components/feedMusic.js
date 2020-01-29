@@ -2,7 +2,7 @@
 
 import * as moment from 'moment';
 
-const dataUrls = ['https://highsnobiety.com/rss', 'http://feeds.feedburner.com/hypebeast/feed', 'https://www.vice.com/en_uk/rss'];
+const dataUrls = ['https://highsnobiety.com/rss', 'http://feeds.feedburner.com/hypebeast/feed', 'https://www.vice.com/en_uk/rss', 'https://thesolesupplier.co.uk/feed'];
 
 $.each(dataUrls, function (i, u) {
 
